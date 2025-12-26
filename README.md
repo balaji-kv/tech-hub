@@ -3,13 +3,11 @@
 Appliction with hardcoded data(Deployed in CDN):
 https://recruiters-space.pages.dev/
 
-Below is the High Availaility application details (Currently in my system only it works):
-
-## Overview 
+## eBuy Overview 
 
 **eBuy** is a cloud-native, high-availability e-commerce platform built using **microservices architecture**, designed to demonstrate **scalability, reliability, low latency, and fault tolerance**—key requirements for large-scale distributed systems.
 
-This project focuses on **real-world system design principles** commonly used at FAANG, Uber, Amazon, and NVIDIA, including domain-driven design, polyglot persistence, event-driven communication, and horizontal scalability.
+This project focuses on **real-world system design principles**, domain-driven design, polyglot persistence, event-driven communication, and horizontal scalability.
 
 ---
 
@@ -38,7 +36,6 @@ This project focuses on **real-world system design principles** commonly used at
 ### Frontend
 - **Framework:** React.js
 - **CDN:** Cloudflare
-- **Authentication:** Keycloak (in progress)
 
 ### Backend
 - **Language & Framework:** Java (Spring Boot)
@@ -71,10 +68,9 @@ Each service can be deployed, scaled, and evolved independently.
 
 ## Functional Capabilities
 
-- User and product management
+- Product management
 - Product catalog and search
 - Cart and order processing
-- Reviews and payments
 - Designed to support high read/write traffic scenarios
 
 ---
@@ -101,24 +97,5 @@ The following components are being integrated to complete a production-grade HA 
 - Event-Driven Architecture
 - Polyglot Persistence
 - Cloud-Native Best Practices
-
----
-
-## System Design Talking Points (Interview Ready)
-
-This project supports deep discussion around:
-
-- Microservice decomposition and data ownership
-- Handling traffic spikes (sales, promotions)
-- Caching strategies and consistency trade-offs
-- Sync vs async communication patterns
-- Failure handling, retries, and idempotency
-- Scaling search, catalog, and order services independently
-
----
-
-## Project Status
-
-🚧 **Actively in development**
 
 This project continues to evolve with additional scalability, observability, and reliability features.

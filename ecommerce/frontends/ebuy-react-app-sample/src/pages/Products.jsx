@@ -19,7 +19,7 @@ const Products = () => {
   const products = (location.state && location.state.products && Array.isArray(location.state.products) && location.state.products.length > 0)
     ? location.state.products.map(p => ({
         ...p,
-        image: p.imageUrl ? (p.imageUrl.startsWith('http') ? p.imageUrl : `/src/assets/images/${p.imageUrl}`) : '',
+        image: p.imageUrl ? (p.imageUrl.startsWith('http') ? p.imageUrl : `./assets/images/${p.imageUrl}`) : '',
         rating: p.rating || 4.5 // fallback if not present
       }))
     : defaultProducts;

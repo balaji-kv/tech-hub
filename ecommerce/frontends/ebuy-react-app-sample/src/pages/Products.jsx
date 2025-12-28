@@ -37,13 +37,13 @@ const Products = () => {
       sessionId
     };
     try {
-      const res = await fetch('http://localhost:8083/api/v1/cart/items', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error('Failed to add to cart');
-      const data = await res.json();
+      // const res = await fetch('http://localhost:8083/api/v1/cart/items', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(payload)
+      // });
+      // if (!res.ok) throw new Error('Failed to add to cart');
+      // const data = await res.json();
       // Assume API returns the added cart item or full cart
       addToCart({ ...product, productId: payload.productId, quantity: payload.quantity });
       alert('Added to cart!');

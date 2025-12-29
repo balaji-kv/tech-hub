@@ -75,6 +75,81 @@ Each service can be deployed, scaled, and evolved independently.
 
 ---
 
+# Ebuy Ecommerce System - Local Deployment Guide
+
+This project is a **microservices-based ecommerce system** consisting of:
+- React frontend
+- Java (Spring Boot) microservices
+- PostgreSQL, MongoDB
+- OpenSearch
+- Docker & Docker Compose
+
+The following steps describe how to run the entire system **locally**.
+
+---
+
+## 📦 Prerequisites
+
+Ensure the following are installed and running:
+- **Node.js (>=18)**
+- **Java 17**
+- **Docker Desktop**
+- **Docker Compose**
+- **MongoDB Shell (`mongosh`)**
+- **PostgreSQL Client (psql or UI tool)**
+
+---
+
+## 🖥️ Frontend Deployment
+
+```bash
+cd <Base Dir>\ecommerce\frontends\ebuy-react-app
+npm install
+npm run dev
+
+## Product Service (Write Model)
+cd <Base Dir>\ecommerce\backends\javams\ebuy-product-service
+./gradlew clean build
+docker compose up --build
+
+## Product Catalog (Read) Service
+cd <Base Dir>\ecommerce\backends\javams\ebuy-product-catalog-read
+./gradlew clean build
+docker compose up --build
+
+## Product Search Service
+cd <Base Dir>\ecommerce\backends\javams\ebuy-product-search
+./gradlew clean build
+docker compose up --build
+
+## Cart Service
+cd <Base Dir>\ecommerce\backends\javams\ebuy-cart-service
+./gradlew clean build
+docker compose up --build
+
+## Order Service
+cd <Base Dir>\ecommerce\backends\javams\ebuy-order-service
+./gradlew clean build
+docker compose up --build
+
+### Database Initialization
+PostgreSQL Databases
+
+Create the following databases and execute the schema scripts:
+| Database   | Script Path                                                   |
+| ---------- | ------------------------------------------------------------- |
+| Product DB | `<Base Dir>\ecommerce\databases\product_db\create_schema.sql` |
+| Order DB   | `<Base Dir>\ecommerce\databases\order_db\create_schema.sql`   |
+| Cart DB    | `<Base Dir>\ecommerce\databases\cart_db\create_schema.sql`    |
+
+Run using:
+psql -d <db_name> -f create_schema.sql
+
+MongoDB – Product Catalog (Read Model)
+Initialize MongoDB schema and seed data using JavaScript:
+mongosh ebuy_db <Base Dir>\ecommerce\databases\ebuy_db\ebuy_schema.js
+
+
 ### Future Enhancements
 
 The following components are being integrated to complete a production-grade HA setup:

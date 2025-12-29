@@ -9,8 +9,6 @@ https://ebuystore.pages.dev/
 
 This project focuses on **real-world system design principles**, domain-driven design, polyglot persistence, event-driven communication, and horizontal scalability.
 
-![Architecture Diagram](eBuy-Architecture.png)
-
 ---
 
 ### Key Highlights
@@ -26,10 +24,13 @@ This project focuses on **real-world system design principles**, domain-driven d
 ### Architecture Overview
 
 - **Architecture Style:** Microservices
-- **Communication:** REST (sync), Kafka (async – in progress)
+- **Communication:** REST (sync)
+- **Kafka:** (async)
 - **Containerization:** Docker
 - **Scalability:** Horizontal scaling with load balancing
 - **Resilience:** Service isolation, caching, and async processing
+
+![Architecture Diagram](eBuy-Architecture.png)
 
 ---
 

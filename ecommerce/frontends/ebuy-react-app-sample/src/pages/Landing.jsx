@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import './Landing.css';
 
 import mobilephone from '../assets/images/mobilephone.png';
 import laptop from '../assets/images/laptop.png';
@@ -42,35 +43,14 @@ const Landing = () => {
   return (
     <>
       <Header title="Welcome to eBuy" />
-      <div className="ebuy-main" style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '2.5rem',
-          justifyContent: 'center',
-          maxWidth: 1400,
-          width: '100%',
-        }}>
+      <div className="ebuy-main">
+        <div className="categories-grid">
           {categories.map(cat => (
-            <div key={cat.name} style={{
-              width: 260,
-              height: 260,
-              background: '#fff',
-              borderRadius: 16,
-              boxShadow: '0 2px 12px rgba(0,0,0,0.09)',
-              padding: '2rem 1.5rem',
-              textAlign: 'center',
-              transition: 'box-shadow 0.2s',
-              cursor: 'pointer',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
+            <div key={cat.name} className="category-card">
               <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-                <img src={cat.image} alt={cat.name} style={{ width: 180, height: 180, objectFit: 'contain', marginBottom: 24, display: 'block' }} />
+                <img src={cat.image} alt={cat.name} />
               </div>
-              <div style={{ fontWeight: 'bold', color: '#232f3e', fontSize: '1.25rem', marginBottom: 12 }}>{cat.name}</div>
+              <div className="category-title">{cat.name}</div>
             </div>
           ))}
         </div>

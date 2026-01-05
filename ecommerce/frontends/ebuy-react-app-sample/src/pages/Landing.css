@@ -1,0 +1,66 @@
+/* Landing page categories grid responsive layout */
+.ebuy-main {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  justify-content: center;
+  max-width: 1400px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.category-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.category-card img {
+  max-width: 180px;
+  max-height: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.category-title {
+  font-weight: bold;
+  color: #232f3e;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 1024px) {
+  .categories-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .category-card { min-height: 220px; padding: 1rem; }
+  .category-card img { max-width: 140px; max-height: 140px; margin-bottom: 12px; }
+}
+
+@media (max-width: 420px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .category-card { padding: 0.75rem; min-height: 180px; }
+  .category-card img { max-width: 120px; max-height: 120px; }
+}

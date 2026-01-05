@@ -19,17 +19,17 @@ const Header = ({ title, onSearch }) => {
           <img src={ebuyLogo} alt="eBuy Logo" style={{ height: '40px', width: 'auto', display: 'block' }} />
         </Link>
       </div>
-      <div style={{ flex: 2, display: 'flex', justifyContent: 'center' }}>
+      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.75rem' }}>
         <ProductSearch onSearch={handleSearch} />
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', marginRight: '2rem' }}>
-        <Link to="/order" style={{ color: 'black', textDecoration: 'none', fontWeight: 'bold', marginRight: '1.5rem', fontSize: '1.1rem', background: '#43d4c0', padding: '0.5rem 1rem', cursor: 'pointer' }}>
+        <Link to="/order" style={{ color: 'black', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.1rem', background: '#43d4c0', padding: '0.5rem 1rem', cursor: 'pointer', borderRadius: '4px' }}>
           Orders
         </Link>
-        <Link to="/signin" style={{ visibility: 'hidden', background: '#43d4c0', color: 'black', padding: '0.5rem 1rem', fontWeight: 'bold', marginRight: '1rem', cursor: 'pointer', textDecoration: 'none' }}>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', marginRight: '2rem', flex: 1, justifyContent: 'flex-end' }}>
+        <Link to="/signin" style={{ display: 'none', background: '#43d4c0', color: 'black', padding: '0.5rem 1rem', fontWeight: 'bold', marginRight: '1rem', cursor: 'pointer', textDecoration: 'none' }}>
           Sign in
         </Link>
-        <Link to="/signin" style={{ visibility: 'hidden', background: '#43d4c0', color: 'black', padding: '0.5rem 1rem', fontWeight: 'bold', marginRight: '1rem', cursor: 'pointer', textDecoration: 'none', borderRadius: '4px' }}>
+        <Link to="/signin" style={{ display: 'none', background: '#43d4c0', color: 'black', padding: '0.5rem 1rem', fontWeight: 'bold', marginRight: '1rem', cursor: 'pointer', textDecoration: 'none', borderRadius: '4px' }}>
           Sign out
         </Link>
         <div style={{ position: 'relative' }}>

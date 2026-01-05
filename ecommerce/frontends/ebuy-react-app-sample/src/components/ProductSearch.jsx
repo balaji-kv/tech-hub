@@ -10139,19 +10139,18 @@ const ProductSearch = ({ onSearch }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        marginLeft: '2rem',
-        background: '#fff',
-        borderRadius: '6px',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.07)',
-        height: '40px',
-        border: '1px solid #43d4c0',
-      }}
-    >
+        <form
+            onSubmit={handleSubmit}
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                background: '#fff',
+                borderRadius: '6px',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.07)',
+                height: '40px',
+                border: '1px solid #43d4c0',
+            }}
+        >
       <select
         value={category}
         onChange={e => setCategory(e.target.value)}
@@ -10168,7 +10167,7 @@ const ProductSearch = ({ onSearch }) => {
           <option key={cat.categoryId} value={cat.name}>{cat.name}</option>
         ))}
       </select>
-  <div style={{ position: 'relative', width: '220px', minWidth: '220px', height: '40px', display: 'flex', alignItems: 'center' }}>
+  <div style={{ position: 'relative', width: '200px', minWidth: '200px', height: '40px', display: 'flex', alignItems: 'center' }}>
         <input
           ref={inputRef}
           type="text"

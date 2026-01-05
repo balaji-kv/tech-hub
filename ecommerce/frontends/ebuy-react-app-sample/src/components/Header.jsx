@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../CartContext';
 import ProductSearch from './ProductSearch';
+import './Header.css';
 
 import ebuyLogo from '../assets/ebuy.png';
 import cartImg from '../assets/images/cart.png';
@@ -13,28 +14,30 @@ const Header = ({ title, onSearch }) => {
     if (onSearch) onSearch(term, category);
   };
   return (
-    <header className="amazon-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', marginRight: '2rem', textDecoration: 'none' }}>
-          <img src={ebuyLogo} alt="eBuy Logo" style={{ height: '40px', width: 'auto', display: 'block' }} />
+    <header className="amazon-header">
+      <div className="header-left">
+        <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
+          <img src={ebuyLogo} alt="eBuy Logo" />
         </Link>
       </div>
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.75rem' }}>
+
+      <div className="header-center">
         <ProductSearch onSearch={handleSearch} />
-        <Link to="/order" style={{ color: 'black', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.1rem', background: '#43d4c0', padding: '0.5rem 1rem', cursor: 'pointer', borderRadius: '4px' }}>
+        <Link to="/order" className="orders-btn">
           Orders
         </Link>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', marginRight: '2rem', flex: 1, justifyContent: 'flex-end' }}>
-        <Link to="/signin" style={{ display: 'none', background: '#43d4c0', color: 'black', padding: '0.5rem 1rem', fontWeight: 'bold', marginRight: '1rem', cursor: 'pointer', textDecoration: 'none' }}>
+
+      <div className="header-right">
+        <Link to="/signin" style={{ display: 'none' }}>
           Sign in
         </Link>
-        <Link to="/signin" style={{ display: 'none', background: '#43d4c0', color: 'black', padding: '0.5rem 1rem', fontWeight: 'bold', marginRight: '1rem', cursor: 'pointer', textDecoration: 'none', borderRadius: '4px' }}>
+        <Link to="/signin" style={{ display: 'none' }}>
           Sign out
         </Link>
         <div style={{ position: 'relative' }}>
           <Link to="/cart" style={{ textDecoration: 'none', color: '#fff', display: 'inline-block', position: 'relative' }}>
-            <img src={cartImg} alt="Cart" style={{ width: 38, height: 38, display: 'block', filter: 'invert(1) brightness(2)' }} />
+            <img src={cartImg} alt="Cart" className="cart-img" />
             {cartCount > 0 && (
               <span style={{ position: 'absolute', top: '-8px', right: '-8px', background: '#43d4c0', color: '#131921', borderRadius: '50%', padding: '2px 7px', fontSize: '0.9rem', fontWeight: 'bold', border: '1px solid #fff' }}>{cartCount}</span>
             )}

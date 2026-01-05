@@ -10138,37 +10138,15 @@ const ProductSearch = ({ onSearch }) => {
     if (onSearch) onSearch(suggestion, category);
   };
 
-  return (
-        <form
-            onSubmit={handleSubmit}
-            style={{
-                display: 'flex',
-                alignItems: 'center',
-                background: '#fff',
-                borderRadius: '6px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.07)',
-                height: '40px',
-                border: '1px solid #43d4c0',
-            }}
-        >
-      <select
-        value={category}
-        onChange={e => setCategory(e.target.value)}
-        style={{
-          padding: '0.5rem 1rem',
-          border: 'none',
-          background: '#f3f3f3',
-          fontWeight: 'bold',
-          outline: 'none',
-          height: '100%',
-        }}
-      >
+    return (
+        <form onSubmit={handleSubmit} className="product-search-form">
+            <select value={category} onChange={e => setCategory(e.target.value)}>
         {categories.map(cat => (
           <option key={cat.categoryId} value={cat.name}>{cat.name}</option>
         ))}
       </select>
-  <div style={{ position: 'relative', width: '200px', minWidth: '200px', height: '40px', display: 'flex', alignItems: 'center' }}>
-        <input
+    <div className="search-input-wrapper">
+                <input
           ref={inputRef}
           type="text"
           placeholder="Search products..."
@@ -10177,40 +10155,30 @@ const ProductSearch = ({ onSearch }) => {
             setSearchTerm(e.target.value);
             setShowSuggestions(true);
           }}
-          style={{
-            padding: '0.5rem 1rem',
-            border: 'none',
-            width: '100%',
-            outline: 'none',
-            height: '32px',
-            boxSizing: 'border-box',
-            fontSize: '1rem',
-            verticalAlign: 'middle',
-            display: 'block',
-          }}
+                    className="product-search-input"
           autoComplete="off"
         />
         {showSuggestions && suggestions.length > 0 && (
           <ul
             ref={suggestionsRef}
-            style={{
-              position: 'absolute',
-              top: '40px',
-              left: 0,
-              right: 0,
-              background: '#fff',
-              border: '1px solid #ddd',
-              borderTop: 'none',
-              borderRadius: '0 0 8px 8px',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
-              zIndex: 9999,
-              margin: 0,
-              padding: 0,
-              listStyle: 'none',
-              maxHeight: '260px',
-              minWidth: '220px',
-              overflowY: 'auto',
-            }}
+                            style={{
+                                position: 'absolute',
+                                top: '40px',
+                                left: 0,
+                                right: 0,
+                                background: '#fff',
+                                border: '1px solid #ddd',
+                                borderTop: 'none',
+                                borderRadius: '0 0 8px 8px',
+                                boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+                                zIndex: 9999,
+                                margin: 0,
+                                padding: 0,
+                                listStyle: 'none',
+                                maxHeight: '260px',
+                                minWidth: '220px',
+                                overflowY: 'auto',
+                            }}
           >
             {suggestions.map((suggestion, idx) => (
               <li
@@ -10236,23 +10204,9 @@ const ProductSearch = ({ onSearch }) => {
           </ul>
         )}
       </div>
-      <button
-        type="submit"
-        style={{
-          background: '#43d4c0',
-          color: '#131921',
-          border: 'none',
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          padding: '0 1.2rem',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          borderLeft: '1px solid #FFD814',
-        }}
-      >
-        <span style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>Search</span>
-      </button>
+            <button type="submit" className="product-search-btn">
+                <span style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>Search</span>
+            </button>
     </form>
   );
 };
